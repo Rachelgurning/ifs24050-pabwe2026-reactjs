@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import NavbarComponent from '../components/NavbarComponent';
 import SidebarComponent from '../components/SidebarComponent';
 import { getAccessToken } from '../../../helpers/apiHelper';
-// Sesuaikan jika kamu memiliki async thunk untuk mengambil profil aktif (misal: asyncGetMyProfile)
+// Sesuaikan jika Anda memiliki async thunk untuk mengambil profil aktif (misal: asyncGetMyProfile)
 
 export default function LostFoundLayout() {
   const navigate = useNavigate();
@@ -29,8 +29,11 @@ export default function LostFoundLayout() {
         {/* Navbar */}
         <NavbarComponent />
 
-        {/* Dynamic Content Area */}
-        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6">
+        {/* Dynamic Content Area dengan Main Landmark untuk Aksesibilitas */}
+        <main 
+          className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6" 
+          role="main"
+        >
           <Outlet />
         </main>
       </div>

@@ -10,13 +10,13 @@ export default function AuthLayout() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-100 px-4">
-      <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
+      <main className="max-w-md w-full bg-white rounded-xl shadow-lg p-8" role="main">
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold text-slate-800">Lost & Founds</h1>
           <p className="text-sm text-slate-500">Sistem Informasi Barang Hilang & Temuan</p>
         </div>
         <Outlet />
-      </div>
+      </main>
     </div>
   );
 }
