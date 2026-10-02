@@ -27,48 +27,52 @@ export default function LoginPage() {
   };
 
   return (
-    <form onSubmit={onSubmitHandler} className="space-y-4">
-      <div>
-        <label htmlFor="login-email-input" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-        <input
-          id="login-email-input"
-          type="email"
-          value={email}
-          onChange={onEmailChange}
-          required
-          aria-label="Alamat Email"
-          className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="nama@email.com"
-        />
+    <>
+      <div className="text-center mb-6">
+        <h1 className="text-2xl font-bold text-slate-800">Masuk ke Akun</h1>
+        <p className="text-sm text-slate-500">Sistem Lost & Founds</p>
       </div>
-      <div>
-        <label htmlFor="login-password-input" className="block text-sm font-medium text-slate-700 mb-1">Kata Sandi</label>
-        <input
-          id="login-password-input"
-          type="password"
-          value={password}
-          onChange={onPasswordChange}
-          required
-          aria-label="Kata Sandi"
-          className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="••••••••"
-        />
-      </div>
-      <button
-        id="login-submit-button"
-        type="submit"
-        disabled={loading}
-        aria-label="Tombol Masuk"
-        className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200 cursor-pointer disabled:opacity-50"
-      >
-        {loading ? 'Memproses...' : 'Masuk'}
-      </button>
-      <p className="text-center text-sm text-slate-600 mt-4">
-        Belum punya akun?{' '}
-        <Link to="/auth/register" className="text-blue-600 font-medium hover:underline">
-          Daftar di sini
-        </Link>
-      </p>
-    </form>
+
+      <form onSubmit={onSubmitHandler} className="space-y-4">
+        <div>
+          <label htmlFor="login-email-input" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+          <input
+            id="login-email-input"
+            type="email"
+            value={email}
+            onChange={onEmailChange}
+            required
+            className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="nama@email.com"
+          />
+        </div>
+        <div>
+          <label htmlFor="login-password-input" className="block text-sm font-medium text-slate-700 mb-1">Kata Sandi</label>
+          <input
+            id="login-password-input"
+            type="password"
+            value={password}
+            onChange={onPasswordChange}
+            required
+            className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="••••••••"
+          />
+        </div>
+        <button
+          id="login-submit-button"
+          type="submit"
+          disabled={loading}
+          className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200 cursor-pointer disabled:opacity-50"
+        >
+          {loading ? 'Memproses...' : 'Masuk'}
+        </button>
+        <p className="text-center text-sm text-slate-600 mt-4">
+          Belum punya akun?{' '}
+          <Link to="/auth/register" className="text-blue-600 font-medium hover:underline">
+            Daftar di sini
+          </Link>
+        </p>
+      </form>
+    </>
   );
 }

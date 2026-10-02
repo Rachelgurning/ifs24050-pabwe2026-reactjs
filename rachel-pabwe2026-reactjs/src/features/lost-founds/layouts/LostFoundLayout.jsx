@@ -29,11 +29,8 @@ export default function LostFoundLayout() {
         {/* Navbar */}
         <NavbarComponent />
 
-        {/* Dynamic Content Area dengan Main Landmark untuk Aksesibilitas */}
-        <main 
-          className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6" 
-          role="main"
-        >
+        {/* Konten utama (landmark main) */}
+        <main id="main-content" className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6">
           <Outlet />
         </main>
       </div>

@@ -9,10 +9,10 @@ export default function AuthLayout() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-100 px-4">
+    <main className="min-h-screen flex items-center justify-center bg-slate-100 px-4">
       <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
         <Outlet />
       </div>
-    </div>
+    </main>
   );
 }

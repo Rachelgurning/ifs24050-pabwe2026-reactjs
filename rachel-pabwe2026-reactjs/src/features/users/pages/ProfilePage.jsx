@@ -62,14 +62,15 @@ export default function ProfilePage() {
   return (
     <div className="space-y-6 max-w-2xl">
       <h1 className="text-2xl font-bold text-slate-800">Profil & Pengaturan Akun</h1>
-      
+
       {/* Update Info Profil */}
       <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
         <h2 className="text-lg font-semibold mb-4">Informasi Profil</h2>
         <form onSubmit={onUpdateProfileHandler} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Nama</label>
+            <label htmlFor="profile-name-input" className="block text-sm font-medium text-slate-700 mb-1">Nama</label>
             <input
+              id="profile-name-input"
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -85,7 +86,9 @@ export default function ProfilePage() {
       <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
         <h2 className="text-lg font-semibold mb-4">Foto Profil</h2>
         <form onSubmit={onUpdatePhotoHandler} className="space-y-4">
+          <label htmlFor="profile-photo-input" className="block text-sm font-medium text-slate-700 mb-1">Pilih Foto Profil</label>
           <input
+            id="profile-photo-input"
             type="file"
             accept="image/*"
             onChange={(e) => setSelectedFile(e.target.files[0])}
@@ -100,9 +103,11 @@ export default function ProfilePage() {
         <h2 className="text-lg font-semibold mb-4">Ganti Kata Sandi</h2>
         <form onSubmit={onUpdatePasswordHandler} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Kata Sandi Lama</label>
+            <label htmlFor="profile-old-password-input" className="block text-sm font-medium text-slate-700 mb-1">Kata Sandi Lama</label>
             <input
+              id="profile-old-password-input"
               type="password"
+              autoComplete="current-password"
               value={oldPassword}
               onChange={(e) => setOldPassword(e.target.value)}
               className="w-full px-3 py-2 border border-slate-300 rounded-lg"
@@ -110,9 +115,11 @@ export default function ProfilePage() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Kata Sandi Baru</label>
+            <label htmlFor="profile-new-password-input" className="block text-sm font-medium text-slate-700 mb-1">Kata Sandi Baru</label>
             <input
+              id="profile-new-password-input"
               type="password"
+              autoComplete="new-password"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
               className="w-full px-3 py-2 border border-slate-300 rounded-lg"

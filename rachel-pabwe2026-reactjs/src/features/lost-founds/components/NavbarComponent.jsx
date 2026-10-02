@@ -15,7 +15,7 @@ export default function NavbarComponent() {
 
   return (
     <header className="bg-white border-b border-slate-200 h-16 flex items-center justify-between px-6">
-      <h2 className="text-lg font-semibold text-slate-800">Lost & Founds Dashboard</h2>
+      <p className="text-lg font-semibold text-slate-800">Lost & Founds Dashboard</p>
       <button
         onClick={onLogoutHandler}
         aria-label="Keluar dari akun"

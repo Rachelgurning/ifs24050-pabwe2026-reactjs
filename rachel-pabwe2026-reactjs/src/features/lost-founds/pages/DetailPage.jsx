@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncGetLostFoundDetail, asyncDeleteLostFound } from '../states/lostFoundSlice';
 import { formatDate, showConfirmDialog, showSuccessDialog, showErrorDialog } from '../../../helpers/toolsHelper';
-import ChangeModal from '../components/modals/ChangeModal';
-
+const ChangeModal = lazy(() => import('../components/modals/ChangeModal'));
 export default function DetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();

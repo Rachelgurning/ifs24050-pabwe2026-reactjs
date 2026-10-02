@@ -1,40 +1,49 @@
-import Swal from 'sweetalert2';
+// SweetAlert2 di-import secara dinamis: hanya diunduh saat dialog pertama kali dipakai
+let swalPromise;
+const getSwal = () => {
+  if (!swalPromise) swalPromise = import('sweetalert2').then((m) => m.default);
+  return swalPromise;
+};
 
-export const showSuccessDialog = (title, text) => {
+export const showSuccessDialog = async (title, text) => {
+  const Swal = await getSwal();
   return Swal.fire({
     icon: 'success',
-    title: title,
-    text: text,
+    title,
+    text,
     timer: 2000,
     showConfirmButton: false,
   });
 };
 
-export const showErrorDialog = (title, text) => {
+export const showErrorDialog = async (title, text) => {
+  const Swal = await getSwal();
   return Swal.fire({
     icon: 'error',
-    title: title,
-    text: text,
+    title,
+    text,
   });
 };
 
-export const showWarningDialog = (title, text) => {
+export const showWarningDialog = async (title, text) => {
+  const Swal = await getSwal();
   return Swal.fire({
     icon: 'warning',
-    title: title,
-    text: text,
+    title,
+    text,
   });
 };
 
 export const showConfirmDialog = async (title, text, confirmButtonText = 'Ya, lanjutkan!') => {
+  const Swal = await getSwal();
   const result = await Swal.fire({
-    title: title,
-    text: text,
+    title,
+    text,
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#aa3bff',
     cancelButtonColor: '#d33',
-    confirmButtonText: confirmButtonText,
+    confirmButtonText,
     cancelButtonText: 'Batal',
   });
   return result.isConfirmed;

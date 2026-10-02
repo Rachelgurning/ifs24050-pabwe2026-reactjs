@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { asyncGetLostFounds } from '../states/lostFoundSlice';
-import AddModal from '../components/modals/AddModal';
+const AddModal = lazy(() => import('../components/modals/AddModal'));
 import { formatDate } from '../../../helpers/toolsHelper';
 
 export default function HomePage() {
