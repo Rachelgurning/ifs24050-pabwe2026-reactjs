@@ -1,0 +1,27 @@
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { authLogout } from '../../auth/states/authSlice';
+import { showSuccessDialog } from '../../../helpers/toolsHelper';
+
+export default function NavbarComponent() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const onLogoutHandler = () => {
+    dispatch(authLogout());
+    showSuccessDialog('Berhasil Keluar', 'Sampai jumpa kembali!');
+    navigate('/auth/login');
+  };
+
+  return (
+    <header className="bg-white border-b border-slate-200 h-16 flex items-center justify-between px-6">
+      <h2 className="text-lg font-semibold text-slate-800">Lost & Founds Dashboard</h2>
+      <button
+        onClick={onLogoutHandler}
+        className="px-4 py-2 bg-rose-50 text-rose-600 hover:bg-rose-100 font-medium rounded-lg text-sm transition"
+      >
+        Keluar
+      </button>
+    </header>
+  );
+}

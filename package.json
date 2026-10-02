@@ -1,0 +1,30 @@
+{
+  "name": "rachel-pabwe2026-reactjs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.x",
+    "@tailwindcss/vite": "^4.3.3",
+    "react": "^18.x",
+    "react-dom": "^18.x",
+    "react-redux": "^9.x",
+    "react-router-dom": "^6.x",
+    "sweetalert2": "^11.x"
+  },
+  "devDependencies": {
+    "@types/react": "^18.x",
+    "@types/react-dom": "^18.x",
+    "@vitejs/plugin-react": "^4.x",
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "vite": "^5.x"
+  }
+}
