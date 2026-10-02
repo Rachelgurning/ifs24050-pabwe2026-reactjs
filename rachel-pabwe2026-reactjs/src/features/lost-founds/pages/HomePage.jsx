@@ -47,12 +47,14 @@ export default function HomePage() {
           placeholder="Cari berdasarkan judul atau deskripsi..."
           value={searchKeyword}
           onChange={(e) => setSearchKeyword(e.target.value)}
+          aria-label="Cari berdasarkan judul atau deskripsi"
           className="px-4 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-purple-500 outline-none"
         />
 
         <select
           value={filterType}
           onChange={(e) => setFilterType(e.target.value)}
+          aria-label="Filter berdasarkan jenis barang"
           className="px-4 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-purple-500 outline-none bg-white"
         >
           <option value="">Semua Jenis (Hilang & Temuan)</option>
@@ -63,6 +65,7 @@ export default function HomePage() {
         <select
           value={filterStatus}
           onChange={(e) => setFilterStatus(e.target.value)}
+          aria-label="Filter berdasarkan status penyelesaian"
           className="px-4 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-purple-500 outline-none bg-white"
         >
           <option value="">Semua Status Penyelesaian</option>

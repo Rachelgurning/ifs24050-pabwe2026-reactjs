@@ -29,25 +29,27 @@ export default function LoginPage() {
   return (
     <form onSubmit={onSubmitHandler} className="space-y-4">
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+        <label htmlFor="login-email-input" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
         <input
           id="login-email-input"
           type="email"
           value={email}
           onChange={onEmailChange}
           required
+          aria-label="Alamat Email"
           className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="nama@email.com"
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-1">Kata Sandi</label>
+        <label htmlFor="login-password-input" className="block text-sm font-medium text-slate-700 mb-1">Kata Sandi</label>
         <input
           id="login-password-input"
           type="password"
           value={password}
           onChange={onPasswordChange}
           required
+          aria-label="Kata Sandi"
           className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="••••••••"
         />
@@ -56,6 +58,7 @@ export default function LoginPage() {
         id="login-submit-button"
         type="submit"
         disabled={loading}
+        aria-label="Tombol Masuk"
         className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200 cursor-pointer disabled:opacity-50"
       >
         {loading ? 'Memproses...' : 'Masuk'}

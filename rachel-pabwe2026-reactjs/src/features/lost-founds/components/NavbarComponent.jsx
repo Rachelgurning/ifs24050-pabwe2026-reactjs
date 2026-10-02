@@ -18,7 +18,8 @@ export default function NavbarComponent() {
       <h2 className="text-lg font-semibold text-slate-800">Lost & Founds Dashboard</h2>
       <button
         onClick={onLogoutHandler}
-        className="px-4 py-2 bg-rose-50 text-rose-600 hover:bg-rose-100 font-medium rounded-lg text-sm transition"
+        aria-label="Keluar dari akun"
+        className="px-4 py-2 bg-rose-50 text-rose-700 hover:bg-rose-100 font-medium rounded-lg text-sm transition"
       >
         Keluar
       </button>
