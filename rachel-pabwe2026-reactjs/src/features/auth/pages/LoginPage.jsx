@@ -26,7 +26,7 @@ export default function LoginPage() {
     }
   };
 
-  return (
+    return (
     <>
       <div className="text-center mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Masuk ke Akun</h1>
@@ -42,6 +42,7 @@ export default function LoginPage() {
             value={email}
             onChange={onEmailChange}
             required
+            aria-label="Alamat Email"
             className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="nama@email.com"
           />
@@ -54,6 +55,7 @@ export default function LoginPage() {
             value={password}
             onChange={onPasswordChange}
             required
+            aria-label="Kata Sandi"
             className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="••••••••"
           />
@@ -62,6 +64,7 @@ export default function LoginPage() {
           id="login-submit-button"
           type="submit"
           disabled={loading}
+          aria-label="Tombol Masuk"
           className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200 cursor-pointer disabled:opacity-50"
         >
           {loading ? 'Memproses...' : 'Masuk'}
