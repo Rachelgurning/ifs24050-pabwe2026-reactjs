@@ -15,9 +15,10 @@ const ProfilePage = lazy(() => import('./features/users/pages/ProfilePage'));
 
 function PageLoader() {
   return (
-    <p role="status" className="text-center py-12 text-slate-500">
-      Memuat halaman...
-    </p>
+    <main id="main-content" className="min-h-screen flex flex-col items-center justify-center">
+      <h1 className="text-xl font-semibold text-slate-800">Lost & Founds</h1>
+      <p role="status" className="text-slate-500">Memuat halaman...</p>
+    </main>
   );
 }
 

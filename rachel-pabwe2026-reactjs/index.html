@@ -2,21 +2,21 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <meta name="description" content="Aplikasi Lost & Founds berbasis ReactJS untuk mengelola dan memantau laporan barang hilang serta temuan." />
     <title>Lost & Founds - PABWE 2026</title>
 
     <!-- Preconnect Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Asynchronous Font Loading (Menghapus Render-Blocking CSS) -->
-    <link 
-      rel="preload" 
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" 
-      as="style" 
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     >
     <noscript>
@@ -24,7 +24,13 @@
     </noscript>
   </head>
   <body class="font-['Plus_Jakarta_Sans'] bg-slate-50 text-slate-800 antialiased">
-    <div id="root"></div>
+    <div id="root">
+      <!-- Shell statis: ada landmark main + h1 sebelum JS berjalan. Otomatis diganti React saat render. -->
+      <main style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:system-ui,sans-serif">
+        <h1 style="font-size:1.25rem;font-weight:600;margin:0">Lost &amp; Founds</h1>
+        <p style="color:#64748b;margin:.25rem 0 0">Memuat aplikasi...</p>
+      </main>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
