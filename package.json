@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cd dist && rm -f ../latest-app.zip && zip -r ../latest-app.zip . && cd ..",
     "lint": "oxlint",
     "preview": "vite preview"
   },
