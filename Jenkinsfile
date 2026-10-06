@@ -179,7 +179,7 @@ pipeline {
             }
         }
 
-        // ============================================================
+                // ============================================================
         // PACKAGE APPLICATION
         // ============================================================
         stage('Package Application') {
@@ -196,33 +196,31 @@ pipeline {
                     set -e
 
                     echo "======================================"
-                    echo "       CREATING APPLICATION PACKAGE"
+                    echo "       BUILDING & PACKAGING APPLICATION"
                     echo "======================================"
 
                     apk add --no-cache zip unzip
 
-                    rm -f latest-app.zip
+                    # 1. Mengubah kode React mentah Anda menjadi folder 'dist' siap pakai untuk internet
+                    npm run build
 
-                    zip -r latest-app.zip . \
-                        -x "node_modules/*" \
-                        -x ".git/*" \
-                        -x ".env" \
-                        -x ".env.*" \
-                        -x "coverage/*" \
-                        -x ".trivy-cache/*" \
-                        -x "latest-app.zip" \
-                        -x "trivy-results.sarif"
+                    # 2. Masuk ke folder 'dist' hasil build tadi
+                    cd dist
 
-                    echo "=== Application Package Created ==="
+                    # 3. Hapus paket zip lama jika ada di folder luar
+                    rm -f ../latest-app.zip
 
+                    # 4. Bungkus HANYA isi dari folder dist saja menjadi file zip
+                    zip -r ../latest-app.zip .
+                    
+                    cd ..
+
+                    echo "=== Application Package Created Successfully ==="
                     ls -lh latest-app.zip
-
-                    echo "=== Package Content ==="
-
-                    unzip -l latest-app.zip
                 '''
             }
         }
+
 
         // ============================================================
         // PUBLISH APPLICATION
